@@ -1,0 +1,23 @@
+2023-04-15T08:20:53.033+05:30  INFO 17120 --- [restartedMain] c.b.E.EmployeePayRollAppApplication      : Starting EmployeePayRollAppApplication using Java 19.0.1 with PID 17120 (C:\Users\achan\IdeaProjects\EmployeePayRollApp\target\classes started by achan in C:\Users\achan\IdeaProjects\EmployeePayRollApp)
+2023-04-15T08:20:53.036+05:30 DEBUG 17120 --- [restartedMain] c.b.E.EmployeePayRollAppApplication      : Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-15T08:20:53.038+05:30  INFO 17120 --- [restartedMain] c.b.E.EmployeePayRollAppApplication      : No active profile set, falling back to 1 default profile: "default"
+2023-04-15T08:20:54.684+05:30  WARN 17120 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-04-15T08:20:54.744+05:30 ERROR 17120 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+

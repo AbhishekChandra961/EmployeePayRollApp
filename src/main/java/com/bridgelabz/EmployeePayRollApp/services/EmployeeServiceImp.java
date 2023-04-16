@@ -4,6 +4,7 @@ import com.bridgelabz.EmployeePayRollApp.dto.EmployeeDTO;
 import com.bridgelabz.EmployeePayRollApp.exception.EmployeePayrollCustomException;
 import com.bridgelabz.EmployeePayRollApp.model.EmployeeData;
 import com.bridgelabz.EmployeePayRollApp.repository.EmployeeRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class EmployeeServiceImp implements IEmployeeServices{
 
     @Autowired
@@ -22,6 +24,7 @@ public class EmployeeServiceImp implements IEmployeeServices{
     @Override
     public EmployeeData addEmployee(EmployeeDTO employeeDTO) {
         EmployeeData empData = new EmployeeData(employeeDTO);
+        log.debug("Employee_Data added to DB:: " + empData.toString());
         list.add(empData);
         return empRepo.save(empData);
     }
