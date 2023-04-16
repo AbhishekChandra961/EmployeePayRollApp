@@ -54,4 +54,8 @@ public class EmployeeController {
         return iEmployeeServices.deleteAllEmployees();
     }
 
+    @GetMapping("/getEmpDept/{dept}")
+    public List<EmployeeData> getEmployeeDetailByDepartment(@PathVariable String dept){
+        return iEmployeeServices.getEmployeeDetailByDepartment(dept);
+    }
 }

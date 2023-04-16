@@ -2,6 +2,7 @@ package com.bridgelabz.EmployeePayRollApp.services;
 
 import com.bridgelabz.EmployeePayRollApp.dto.EmployeeDTO;
 import com.bridgelabz.EmployeePayRollApp.exception.EmployeePayrollCustomException;
+import com.bridgelabz.EmployeePayRollApp.exception.EmployeePayrollDepartmentNotFoundException;
 import com.bridgelabz.EmployeePayRollApp.model.EmployeeData;
 import com.bridgelabz.EmployeePayRollApp.repository.EmployeeRepo;
 import lombok.extern.slf4j.Slf4j;
@@ -72,5 +73,14 @@ public class EmployeeServiceImp implements IEmployeeServices{
         return "All Employee's Detail-Recordsa are deleted";
     }
 
+    @Override
+    public List<EmployeeData> getEmployeeDetailByDepartment(String department) {
+        List<EmployeeData> getByDept = empRepo.findEmployeeByDepartment(department);
+        if(getByDept.isEmpty()){
+            throw new EmployeePayrollDepartmentNotFoundException("Employee With " + department + " Department doesn't exist." );
+        }else{
+            return getByDept;
+        }
+    }
 
 }

@@ -11,10 +11,12 @@ public class EmployeePayRollAppApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(EmployeePayRollAppApplication.class, args);
-//		SpringApplication.run(EmployeePayRollAppApplication.class, args);
+//		SpringApplication.run(EmployeepayrollappApplication.class, args);
+		log.info("Employee PayRoll Application Started SuccessFully.....!!!");
 		log.info("Application is started in {} environment", context.getEnvironment().getProperty("environment"));
 		log.info("MySQL Database UserName is ::  {}", context.getEnvironment().getProperty("spring.datasource.username"));
 		log.info("MySQL Database Password is ::  {}", context.getEnvironment().getProperty("spring.datasource.password"));
 
 	}
+
 }
